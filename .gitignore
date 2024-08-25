@@ -54,5 +54,4 @@ build/
 uploads/
 uploads/**
 
-# Arquivos de PID
-*.pid
+
