@@ -1,0 +1,58 @@
+# Diretório do ambiente do Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs de depuração
+*.log
+
+# Dependências locais
+package-lock.json
+yarn.lock
+
+# Configurações do Editor
+.idea/
+.vscode/
+*.swp
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Diretórios temporários
+tmp/
+temp/
+.cache/
+
+# Arquivos de ambiente
+.env
+.env.test
+.env.production
+.env.*.local
+
+# Dados de cobertura de teste
+coverage/
+*.lcov
+
+# Logs de PM2
+pids/
+logs/
+
+# Módulos compilados
+*.so
+
+# Relatórios de cobertura de teste
+nyc_output/
+*.lcov
+
+# Relatórios de build
+dist/
+build/
+
+# Pastas de upload
+uploads/
+uploads/**
+
+# Arquivos de PID
+*.pid
