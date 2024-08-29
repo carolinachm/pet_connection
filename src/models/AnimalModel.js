@@ -3,7 +3,10 @@ import db from "../db.js";
 
 export default db.define("animal", {
   id: {
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
+    validate: {
+        min: 0 // Garante que o valor seja sempre maior ou igual a 0
+    },
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,
