@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import db from "../db.js";
 
-export default db.define("animal", {
+const Animal = db.define("animal", {
   id: {
     type: Sequelize.INTEGER,
     validate: {
@@ -60,8 +60,10 @@ export default db.define("animal", {
     type: Sequelize.INTEGER,
     allowNull: false, 
     references: {
-      model: "Abrigo", // Nome da tabela de referência
-      key: "id", // Nome da coluna de referência na tabela de Abrigo
+      model: Abrigo,
+      key: "id", 
     },
   },
 });
+
+export default Animal;

@@ -4,7 +4,7 @@ import { Sequelize } from "sequelize";
 import db from "../db.js";
 
 // Define e exporta o modelo de 'usuario' utilizando a configuração do banco de dados.
-export default db.define("usuario", {
+const Usuario = db.define("usuario", {
   // Define o campo 'id' como chave primária, inteiro não assinado, auto-incrementado e não nulo.
   id: {
     type: Sequelize.INTEGER,
@@ -59,3 +59,5 @@ export default db.define("usuario", {
     defaultValue: Sequelize.NOW,
   },
 });
+
+export default Usuario;
