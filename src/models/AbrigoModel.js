@@ -39,8 +39,8 @@ const Abrigo = db.define("abrigo", {
       medel: Usuario,
       key: "id"
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE",
   }
 });
 
