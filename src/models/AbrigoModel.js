@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
+import Usuario from "./UsuarioModel.js";
 
 const Abrigo = db.define("abrigo", {
   id: {
@@ -19,6 +20,28 @@ const Abrigo = db.define("abrigo", {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  telefone: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  capacidade_max: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  id_administrador: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    references: {
+      medel: Usuario,
+      key: "id"
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL'
+  }
 });
 
 export default Abrigo;
