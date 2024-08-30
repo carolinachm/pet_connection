@@ -3,7 +3,7 @@ import db from "../db/db.js";
 import Usuario from "./UsuarioModel.js";
 import Animal from "./AnimalModel.js";
 
-const HistoricoMedico = db.define("historicoMedico", {
+const Apadrinhamento = db.define("apadrinhamento", {
   id: {
     type: Sequelize.INTEGER,
     validate: {
@@ -13,16 +13,6 @@ const HistoricoMedico = db.define("historicoMedico", {
     autoIncrement: true,
     allowNull: false,
   },
-  id_animal: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    references: {
-      model: Animal,
-      key: "id",
-    },
-    onUpdate: "CASCADE",
-    onDelete: "SET NULL",
-  },
   id_usuario: {
     type: Sequelize.INTEGER,
     allowNull: false,
@@ -31,15 +21,31 @@ const HistoricoMedico = db.define("historicoMedico", {
       key: "id",
     },
     onUpdate: "CASCADE",
-    onDelete: "SET NULL",
+    onDelete: "CASCADE",
   },
-  data_visita: {
-    type: Sequelize.DATE,
+  id_animal: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    references: {
+      model: Animal,
+      key: "id",
+    },
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE",
+  },
+  valor_mensal: {
+    type: Sequelize.FLOAT,
     allowNull: false,
   },
-  observacoes: {
-    type: Sequelize.TEXT,
+  data_inicio: {
+    type: Sequelize.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW,
+  },
+  data_fim: {
+    type: Sequelize.DATE,
     allowNull: true,
   },
 });
-export default HistoricoMedico;
+
+export default Apadrinhamento;

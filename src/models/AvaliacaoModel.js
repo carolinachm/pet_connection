@@ -1,9 +1,8 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
-import Usuario from "./UsuarioModel.js";
-import Animal from "./AnimalModel.js";
+import Adocao from "./AdocaoModel.js";
 
-const HistoricoMedico = db.define("historicoMedico", {
+const Avaliacao = db.define("avaliacao", {
   id: {
     type: Sequelize.INTEGER,
     validate: {
@@ -13,33 +12,33 @@ const HistoricoMedico = db.define("historicoMedico", {
     autoIncrement: true,
     allowNull: false,
   },
-  id_animal: {
+  id_adocao: {
     type: Sequelize.INTEGER,
     allowNull: false,
     references: {
-      model: Animal,
+      model: Adocao,
       key: "id",
     },
     onUpdate: "CASCADE",
-    onDelete: "SET NULL",
+    onDelete: "CASCADE",
   },
-  id_usuario: {
+  nota: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    references: {
-      model: Usuario,
-      key: "id",
+    validate: {
+      min: 1,
+      max: 5,
     },
-    onUpdate: "CASCADE",
-    onDelete: "SET NULL",
   },
-  data_visita: {
-    type: Sequelize.DATE,
-    allowNull: false,
-  },
-  observacoes: {
+  comentarios: {
     type: Sequelize.TEXT,
     allowNull: true,
   },
+  data_avaliacao: {
+    type: Sequelize.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW,
+  },
 });
-export default HistoricoMedico;
+
+export default Avaliacao;

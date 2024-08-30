@@ -1,9 +1,9 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
-import Usuario from "./UsuarioModel.js";
 import Animal from "./AnimalModel.js";
+import Adocao from "./AdocaoModel.js"; // Certifique-se de que o modelo Adocao está corretamente importado
 
-const HistoricoMedico = db.define("historicoMedico", {
+const HistoricoAdocao = db.define("historico_adocao", {
   id: {
     type: Sequelize.INTEGER,
     validate: {
@@ -21,25 +21,31 @@ const HistoricoMedico = db.define("historicoMedico", {
       key: "id",
     },
     onUpdate: "CASCADE",
-    onDelete: "SET NULL",
+    onDelete: "CASCADE",
   },
-  id_usuario: {
+  id_adocao: {
     type: Sequelize.INTEGER,
     allowNull: false,
     references: {
-      model: Usuario,
+      model: Adocao,
       key: "id",
     },
     onUpdate: "CASCADE",
-    onDelete: "SET NULL",
+    onDelete: "CASCADE",
   },
-  data_visita: {
+  data_adocao: {
     type: Sequelize.DATE,
     allowNull: false,
+    defaultValue: Sequelize.NOW,
   },
-  observacoes: {
+  data_devolucao: {
+    type: Sequelize.DATE,
+    allowNull: true,
+  },
+  motivo_devolucao: {
     type: Sequelize.TEXT,
     allowNull: true,
   },
 });
-export default HistoricoMedico;
+
+export default HistoricoAdocao;

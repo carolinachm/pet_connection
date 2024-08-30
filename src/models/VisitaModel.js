@@ -35,7 +35,7 @@ const Visita = db.define("visita", {
     },
     observacoes: {
       type: Sequelize.TEXT,
-      allownull: false,
+      allownull: true,
     },
   },
 });

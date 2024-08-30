@@ -1,9 +1,8 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
 import Usuario from "./UsuarioModel.js";
-import Animal from "./AnimalModel.js";
 
-const HistoricoMedico = db.define("historicoMedico", {
+const Mensagem = db.define("mensagem", {
   id: {
     type: Sequelize.INTEGER,
     validate: {
@@ -13,17 +12,7 @@ const HistoricoMedico = db.define("historicoMedico", {
     autoIncrement: true,
     allowNull: false,
   },
-  id_animal: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    references: {
-      model: Animal,
-      key: "id",
-    },
-    onUpdate: "CASCADE",
-    onDelete: "SET NULL",
-  },
-  id_usuario: {
+  id_usuario_origem: {
     type: Sequelize.INTEGER,
     allowNull: false,
     references: {
@@ -31,15 +20,32 @@ const HistoricoMedico = db.define("historicoMedico", {
       key: "id",
     },
     onUpdate: "CASCADE",
-    onDelete: "SET NULL",
+    onDelete: "CASCADE",
   },
-  data_visita: {
-    type: Sequelize.DATE,
+  id_usuario_destino: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    references: {
+      model: Usuario,
+      key: "id",
+    },
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE",
+  },
+  conteudo: {
+    type: Sequelize.TEXT,
     allowNull: false,
   },
-  observacoes: {
-    type: Sequelize.TEXT,
-    allowNull: true,
+  data_envio: {
+    type: Sequelize.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW,
+  },
+  lida: {
+    type: Sequelize.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
   },
 });
-export default HistoricoMedico;
+
+export default Mensagem;

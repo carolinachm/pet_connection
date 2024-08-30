@@ -44,7 +44,7 @@ const Adocao = define(adocao, {
   },
   observacoes: {
     type: Sequelize.TEXT,
-    allowNull: false
+    allowNull: true
   }
 });
 
