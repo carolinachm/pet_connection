@@ -3,7 +3,7 @@ import db from "../db/db.js";
 import Animal from "./AnimalModel.js";
 import Usuario from "./UsuarioModel.js";
 
-const Adocao = define(adocao, {
+const Adocao = define("adocao", {
   id: {
     type: Sequelize.INTEGER,
     validate: {
