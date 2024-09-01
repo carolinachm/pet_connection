@@ -19,7 +19,7 @@ export default class AnimalService {
   
     // Método para atualizar um animal pelo ID.
     static async atualizarAnimal(id, data) {
-      return await UsuarioRepository.update(data, id);
+      return await AnimalRepository.update(data, id);
     }
   
     // Método para deletar um animal pelo ID.
