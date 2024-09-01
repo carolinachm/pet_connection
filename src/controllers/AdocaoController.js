@@ -57,4 +57,10 @@ async function deletarAdocao(req, res) {
   }
 }
 
-export default { listarTodasAdocoes, buscarAdocaoPorId, cadastrarAdocao, atualizarAdocao, deletarAdocao };
+export default {
+  listarTodasAdocoes,
+  buscarAdocaoPorId,
+  cadastrarAdocao,
+  atualizarAdocao,
+  deletarAdocao,
+};
