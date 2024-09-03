@@ -1,4 +1,4 @@
-import AdocaoService from "../service/AdocaoService";
+import AdocaoService from "../services/AdocaoService";
 
 async function listarTodasAdocoes(req, res) {
   try {

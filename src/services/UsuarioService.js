@@ -1,5 +1,5 @@
 // Importa o repositório de usuários.
-import UsuarioRepository from "../repositories/UsuarioRepository.js";
+import UsuarioRepository from "../repositories/UsuarioRepository";
 
 // Define e exporta a classe UsuarioService.
 export default class UsuarioService {

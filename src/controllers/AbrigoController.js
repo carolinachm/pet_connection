@@ -1,4 +1,4 @@
-import AbrigoService from "../service/AbrigoService";
+import AbrigoService from "../services/AbrigoService";
 
 async function listarTodosAbrigos(req, res) {
   try {
