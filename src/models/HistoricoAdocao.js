@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
 import Animal from "./AnimalModel.js";
-import Adocao from "./AdocaoModel.js"; // Certifique-se de que o modelo Adocao está corretamente importado
+import Adocao from "./AdocaoModel.js"; 
 
 const HistoricoAdocao = db.define("historico_adocao", {
   id: {

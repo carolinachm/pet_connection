@@ -1,5 +1,5 @@
 import express from "express";
-import AdocaoController from "../controllers/AdocaoController";
+import AdocaoController from "../controllers/AdocaoController.js";
 
 const router = express.Router()
 

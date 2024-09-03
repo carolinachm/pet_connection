@@ -1,4 +1,4 @@
-import Adocao from "../models/AdocaoModel";
+import Adocao from "../models/AdocaoModel.js";
 
 export default class Adocao {
   static async findAll() {

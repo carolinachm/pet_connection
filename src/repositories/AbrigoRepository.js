@@ -1,4 +1,4 @@
-import Abrigo from "../models/AbrigoModel";
+import Abrigo from "../models/AbrigoModel.js";
 
 export default class AbrigoRepository {
     static async findAll() {

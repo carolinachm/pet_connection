@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
-import Usuario from "./UsuarioModel.js";
+import Usuario from "./usuarioModel.js";
 import Animal from "./AnimalModel.js";
 
 const Apadrinhamento = db.define("apadrinhamento", {
