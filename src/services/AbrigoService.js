@@ -1,4 +1,4 @@
-import AbrigoRepository from "../repositores/AbrigoRepository";
+import AbrigoRepository from "../repositories/AbrigoRepository";
 
 export default class AbrigoService {
   static async listarTodosAbrigos() {
