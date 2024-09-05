@@ -1,8 +1,8 @@
-import DoacaoService from "../services/Doacaoservice";
+import DoacaoService from "../services/DoacaoService";
 
 async function listarTodasDoacoes(req, res) {
   try {
-    const DoacaoService = await DoacaoService.listarTodasDoacoes();
+    const doacoes = await DoacaoService.listarTodasDoacoes();
     res.json(doacoes);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -33,7 +33,7 @@ async function cadastrarDoacao(req, res) {
 
 async function atualizarDoacao(req, res) {
   try {
-    const doacao = await doacaoService.atualizarDoacao(req.params.id, req.body);
+    const doacao = await DoacaoService.atualizarDoacao(req.params.id, req.body);
     if (doacao) {
       res.json(await DoacaoService.buscarDoacaoPorId(req.params.id));
     } else {
