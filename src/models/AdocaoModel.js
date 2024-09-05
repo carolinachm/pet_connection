@@ -48,4 +48,14 @@ const Adocao = db.define("adocao", {
   }
 });
 
+Adocao.belongsTo(Animal, {
+  foreignKey: 'id_animal',
+  as: 'animal'
+})
+
+Adocao.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
+})
+
 export default Adocao;
