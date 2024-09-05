@@ -36,7 +36,7 @@ const Abrigo = db.define("abrigo", {
     type: Sequelize.INTEGER,
     allowNull: false,
     references: {
-      medel: Usuario,
+      model: Usuario,
       key: "id"
     },
     onUpdate: "CASCADE",

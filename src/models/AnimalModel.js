@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
+import Abrigo from "./AbrigoModel.js";
 
 const Animal = db.define("animal", {
   id: {
@@ -64,6 +65,12 @@ const Animal = db.define("animal", {
       key: "id", 
     },
   },
+});
+
+// Definindo a relação entre Animal e Abrigo
+Animal.belongsTo(Abrigo, {
+  foreignKey: 'id_abrigo',
+  as: 'abrigo'
 });
 
 export default Animal;
