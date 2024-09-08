@@ -40,4 +40,9 @@ const Visita = db.define("visita", {
   },
 });
 
+Visita.belongsTo(Usuario, {
+  foreignKey: "id_usuario",
+  as: "usuario",
+});
+
 export default Visita;

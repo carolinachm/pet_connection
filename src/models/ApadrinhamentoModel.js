@@ -48,4 +48,14 @@ const Apadrinhamento = db.define("apadrinhamento", {
   },
 });
 
+Apadrinhamento.belongsTo(Animal, {
+  foreignKey: 'id_animal',
+  as: 'animal'
+});
+
+Apadrinhamento.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
+});
+
 export default Apadrinhamento;

@@ -48,4 +48,9 @@ const HistoricoAdocao = db.define("historico_adocao", {
   },
 });
 
+HistoricoAdocao.belongsTo(Adocao, {
+  foreignKey: 'id_adocao',
+  as: 'adocao'
+});
+
 export default HistoricoAdocao;

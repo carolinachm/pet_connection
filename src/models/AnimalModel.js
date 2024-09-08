@@ -59,7 +59,7 @@ const Animal = db.define("animal", {
   },
   id_abrigo: {
     type: Sequelize.INTEGER,
-    allowNull: false, 
+    allowNull: true, 
     references: {
       model: Abrigo,
       key: "id", 

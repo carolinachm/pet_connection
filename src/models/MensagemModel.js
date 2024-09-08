@@ -48,4 +48,9 @@ const Mensagem = db.define("mensagem", {
   },
 });
 
+Mensagem.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
+});
+
 export default Mensagem;

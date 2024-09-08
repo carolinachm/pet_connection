@@ -48,4 +48,14 @@ const Documento = db.define("documento", {
   },
 });
 
+Documento.belongsTo(Animal, {
+  foreignKey: 'id_animal',
+  as: 'animal'
+});
+
+Documento.belongsTo(Adocao, {
+  foreignKey: 'id_adocao',
+  as: 'adocao'
+}); 
+
 export default Documento;

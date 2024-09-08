@@ -36,4 +36,9 @@ const PreferenciaAdocao = db.define("preferencia_adocao", {
   },
 });
 
+PreferenciaAdocao.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
+});
+
 export default PreferenciaAdocao;

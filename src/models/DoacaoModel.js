@@ -32,7 +32,11 @@ const Doacao = db.define("doacao", {
     type: Sequelize.TEXT,
     allowNull: true
   }
-}, {
+});
+
+Doacao.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
 });
 
 export default Doacao;

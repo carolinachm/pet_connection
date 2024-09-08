@@ -44,4 +44,9 @@ const Abrigo = db.define("abrigo", {
   }
 });
 
+Abrigo.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
+});
+
 export default Abrigo;

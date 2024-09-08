@@ -42,4 +42,15 @@ const HistoricoMedico = db.define("historico_medico", {
     allowNull: true,
   },
 });
+
+HistoricoMedico.belongsTo(Animal, {
+  foreignKey: 'id_animal',
+  as: 'animal',
+});
+
+HistoricoMedico.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
+});
+
 export default HistoricoMedico;
