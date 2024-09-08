@@ -1,4 +1,4 @@
-import AnimalService from "../services/AnimalService";
+import AnimalService from "../services/AnimalService.js";
 
 async function listarTodosAnimal(req, res) {
     try {

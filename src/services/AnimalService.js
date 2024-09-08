@@ -1,4 +1,4 @@
-import AnimalRepository from "../repositories/AnimalRepository"
+import AnimalRepository from "../repositories/AnimalRepository.js"
 
 // Define e exporta a classe AnimalService.
 export default class AnimalService {

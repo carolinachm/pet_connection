@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
 import Animal from "./AnimalModel.js";
-import Usuario from "./UsuarioModel.js";
+import Usuario from "./usuarioModel.js";
 
 const Adocao = db.define("adocao", {
   id: {
@@ -47,5 +47,15 @@ const Adocao = db.define("adocao", {
     allowNull: true
   }
 });
+
+Adocao.belongsTo(Animal, {
+  foreignKey: 'id_animal',
+  as: 'animal'
+})
+
+Adocao.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
+})
 
 export default Adocao;

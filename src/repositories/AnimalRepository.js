@@ -1,4 +1,4 @@
-import Animal from "../models/AnimalModel";
+import Animal from "../models/AnimalModel.js";
 
 export default class AnimalRepository {
   static async findAll() {

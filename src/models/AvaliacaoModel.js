@@ -41,4 +41,9 @@ const Avaliacao = db.define("avaliacao", {
   },
 });
 
+Avaliacao.belongsTo(Adocao, {
+  foreignKey: 'id_adocao',
+  as: 'adocao'
+});
+
 export default Avaliacao;

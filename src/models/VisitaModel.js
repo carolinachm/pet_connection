@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
-import Usuario from "./UsuarioModel.js";
+import Usuario from "./usuarioModel.js";
 import Animal from "./AnimalModel.js";
 
 const Visita = db.define("visita", {
@@ -38,6 +38,11 @@ const Visita = db.define("visita", {
       allownull: true,
     },
   },
+});
+
+Visita.belongsTo(Usuario, {
+  foreignKey: "id_usuario",
+  as: "usuario",
 });
 
 export default Visita;

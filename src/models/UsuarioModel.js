@@ -1,7 +1,7 @@
 // Importa a classe Sequelize do módulo sequelize.
 import { Sequelize } from "sequelize";
 // Importa a configuração do banco de dados.
-import db from "../db.js";
+import db from "../db/db.js";
 
 // Define e exporta o modelo de 'usuario' utilizando a configuração do banco de dados.
 const Usuario = db.define("usuario", {

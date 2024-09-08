@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
-import Usuario from "./UsuarioModel.js";
+import Usuario from "./usuarioModel.js";
 import Animal from "./AnimalModel.js";
 
 const HistoricoMedico = db.define("historico_medico", {
@@ -42,4 +42,15 @@ const HistoricoMedico = db.define("historico_medico", {
     allowNull: true,
   },
 });
+
+HistoricoMedico.belongsTo(Animal, {
+  foreignKey: 'id_animal',
+  as: 'animal',
+});
+
+HistoricoMedico.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
+});
+
 export default HistoricoMedico;

@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
-import Usuario from "./UsuarioModel.js";
+import Usuario from "./usuarioModel.js";
 import Animal from "./AnimalModel.js";
 
 const Apadrinhamento = db.define("apadrinhamento", {
@@ -46,6 +46,16 @@ const Apadrinhamento = db.define("apadrinhamento", {
     type: Sequelize.DATE,
     allowNull: true,
   },
+});
+
+Apadrinhamento.belongsTo(Animal, {
+  foreignKey: 'id_animal',
+  as: 'animal'
+});
+
+Apadrinhamento.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
 });
 
 export default Apadrinhamento;

@@ -1,4 +1,4 @@
-import AdocaoService from "../repositories/AdocaoRepository";
+import AdocaoService from "../repositories/AdocaoRepository.js";
 
 export default class AdocaoService {
     static async listarTodasAdocoes() {

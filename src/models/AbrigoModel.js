@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
-import Usuario from "./UsuarioModel.js";
+import Usuario from "./usuarioModel.js";
 
 const Abrigo = db.define("abrigo", {
   id: {
@@ -36,12 +36,17 @@ const Abrigo = db.define("abrigo", {
     type: Sequelize.INTEGER,
     allowNull: false,
     references: {
-      medel: Usuario,
+      model: Usuario,
       key: "id"
     },
     onUpdate: "CASCADE",
     onDelete: "CASCADE",
   }
+});
+
+Abrigo.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
 });
 
 export default Abrigo;

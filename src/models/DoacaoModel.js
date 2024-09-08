@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
-import Usuario from "./UsuarioModel.js";
+import Usuario from "./usuarioModel.js";
 
 const Doacao = db.define("doacao", {
   id: {
@@ -32,7 +32,11 @@ const Doacao = db.define("doacao", {
     type: Sequelize.TEXT,
     allowNull: true
   }
-}, {
+});
+
+Doacao.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
 });
 
 export default Doacao;

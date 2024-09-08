@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../db/db.js";
-import Usuario from "./UsuarioModel.js";
+import Usuario from "./usuarioModel.js";
 
 const Mensagem = db.define("mensagem", {
   id: {
@@ -46,6 +46,11 @@ const Mensagem = db.define("mensagem", {
     allowNull: false,
     defaultValue: false,
   },
+});
+
+Mensagem.belongsTo(Usuario, {
+  foreignKey: 'id_usuario',
+  as: 'usuario'
 });
 
 export default Mensagem;

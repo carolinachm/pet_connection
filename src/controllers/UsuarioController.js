@@ -1,5 +1,5 @@
 // Importa o serviço de usuários.
-import UsuarioService from "../services/UsuarioService";
+import UsuarioService from "../services/UsuarioService.js";
 
 // Função para listar todos os usuários.
 async function listarTodos(req, res) {

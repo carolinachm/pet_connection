@@ -1,5 +1,5 @@
 import express from "express";
-import AbrigoController from "../controllers/AbrigoController";
+import AbrigoController from "../controllers/AbrigoController.js";
 
 const router = express.Router();
 
