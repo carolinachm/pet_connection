@@ -1,7 +1,7 @@
-import AnimalRepository from "../repositores/AnimalRepository"
+const AnimalRepository = require("../repositores/AnimalRepository");
 
 // Define e exporta a classe AnimalService.
-export default class AnimalService {
+ class AnimalService {
     // Método para listar todos os animais.
     static async listarTodosAnimal() {
       return await AnimalRepository.findAll();
@@ -26,4 +26,5 @@ export default class AnimalService {
     static async deletarAnimal(id) {
       return await AnimalRepository.destroy(id);
     }
-  }
+ }
+ module.exports = AnimalService;

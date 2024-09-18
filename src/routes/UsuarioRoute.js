@@ -1,7 +1,7 @@
 // Importa o módulo Express para criar as rotas.
-import express from "express";
+const express = require("express");
 // Importa o controlador de usuários.
-import usuarioController from "../controllers/UsuarioController.js";
+const usuarioController = require ("../controllers/UsuarioController.js");
 
 // Cria um roteador Express.
 const router = express.Router();
@@ -14,4 +14,4 @@ router.put("/usuario/:id", usuarioController.atualizarUsuario);
 router.delete("/usuario/:id", usuarioController.deletarUsuario);
 
 // Exporta o roteador configurado como padrão.
-export default router;
+module.exports = router;

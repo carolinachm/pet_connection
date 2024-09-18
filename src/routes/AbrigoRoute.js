@@ -1,5 +1,5 @@
-import express from "express";
-import AbrigoController from "../controllers/AbrigoController";
+const express = require("express");
+const AbrigoController  = require("../controllers/AbrigoController");
 
 const router = express.Router();
 
@@ -10,4 +10,4 @@ router.post("/abrigo", AbrigoController.cadastrarAbrigo);
 router.put("/abrigo/:id", AbrigoController.atualizarAbrigo);
 router.delete("/abrigo/:id", AbrigoController.deletarAbrigo);
 
-export default router;
+module.exports = router;

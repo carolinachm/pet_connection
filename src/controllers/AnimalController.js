@@ -1,4 +1,4 @@
-import AnimalService from "../service/AnimalService";
+const AnimalService = require("../service/AnimalService");
 
 async function listarTodosAnimal(req, res) {
     try {
@@ -57,5 +57,5 @@ async function atualizarAnimal(req, res) {
     }
   }
 
-export default { listarTodosAnimal, buscarAnimalPorId, cadastraAnimal, atualizarAnimal, deletarAnimal };
+module.exports = { listarTodosAnimal, buscarAnimalPorId, cadastraAnimal, atualizarAnimal, deletarAnimal };
   

@@ -1,4 +1,4 @@
-import Adocao from "../models/AdocaoModel";
+const Adocao = require( "../models/AdocaoModel");
 
 export default class Adocao {
   static async findAll() {
@@ -17,3 +17,4 @@ export default class Adocao {
     return await Adocao.destroy({ where: { id } });
   }
 }
+module.exports= Adocao;

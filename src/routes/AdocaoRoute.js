@@ -1,5 +1,5 @@
-import express from "express";
-import AdocaoController from "../controllers/AdocaoController";
+const express = require("express");
+const AdocaoController = require("../controllers/AdocaoController");
 
 const router = express.Router()
 
@@ -10,4 +10,4 @@ router.post("/adocao", AdocaoController.cadastrarAdocao);
 router.put("/adocao/:id", AdocaoController.atualizarAdocao);
 router.delete("/adocao/:id", AdocaoController.deletarAdocao);
 
-export default router;
+module.exports =  router;

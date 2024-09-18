@@ -1,6 +1,6 @@
-import Animal from "../models/AnimalModel";
+const Animal = require( "../models/AnimalModel");
 
-export default class AnimalRepository {
+class AnimalRepository {
   static async findAll() {
     return await Animal.findAll();
   }
@@ -21,3 +21,4 @@ export default class AnimalRepository {
     return await Animal.destroy({ where: { id } });
   }
 }
+module.exports = AnimalRepository;

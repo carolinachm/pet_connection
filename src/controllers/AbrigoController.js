@@ -1,4 +1,4 @@
-import AbrigoService from "../service/AbrigoService";
+const AbrigoService = require("../service/AbrigoService");
 
 async function listarTodosAbrigos(req, res) {
   try {

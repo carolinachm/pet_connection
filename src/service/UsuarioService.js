@@ -1,8 +1,8 @@
 // Importa o repositório de usuários.
-import UsuarioRepository from "../repositories/UsuarioRepository.js";
+const UsuarioRepository = require("../repositores/UsuarioRepository");
 
 // Define e exporta a classe UsuarioService.
-export default class UsuarioService {
+class UsuarioService {
   // Método para listar todos os usuários.
   static async listarTodos() {
     return await UsuarioRepository.findAll();
@@ -28,3 +28,4 @@ export default class UsuarioService {
     return await UsuarioRepository.destroy(id);
   }
 }
+module.exports = UsuarioService;

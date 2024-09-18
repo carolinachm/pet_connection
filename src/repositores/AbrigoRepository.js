@@ -1,6 +1,6 @@
-import Abrigo from "../models/AbrigoModel";
+const Abrigo = require("../models/AbrigoModel");
 
-export default class AbrigoRepository {
+class AbrigoRepository {
     static async findAll() {
         return await Abrigo.findAll();
     }
@@ -17,3 +17,4 @@ export default class AbrigoRepository {
         return await Abrigo.destroy({ where: { id }});
     }
 }
+module.exports = AbrigoRepository;

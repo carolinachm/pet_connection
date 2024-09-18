@@ -1,5 +1,5 @@
-import express from "express";
-import AnimalController from "../controllers/AnimalController";
+const express = require("express");
+const AnimalController = require( "../controllers/AnimalController");
 
 const router = express.Router();
 
@@ -10,4 +10,4 @@ router.post("/animal", AnimalController.cadastraAnimal);
 router.put("/animal/:id", AnimalController.atualizarAnimal);
 router.delete("/animal/:id",AnimalController.deletarAnimal);
 
-export default router;
+module.exports = router;

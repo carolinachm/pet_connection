@@ -1,4 +1,4 @@
-import AdocaoService from "../service/AdocaoService";
+const AdocaoService = require("../service/AdocaoService");
 
 async function listarTodasAdocoes(req, res) {
   try {
@@ -57,7 +57,7 @@ async function deletarAdocao(req, res) {
   }
 }
 
-export default {
+module.exports = {
   listarTodasAdocoes,
   buscarAdocaoPorId,
   cadastrarAdocao,

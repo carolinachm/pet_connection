@@ -1,11 +1,11 @@
 // Importa o serviço de usuários.
-import UsuarioService from "../services/UsuarioService.js";
+const UsuarioService = require("../service/UsuarioService");
 
 // Função para listar todos os usuários.
 async function listarTodos(req, res) {
   try {
-    const usuarios = await UsuarioService.listarTodos();
-    res.json(usuarios);
+    const usuario = await UsuarioService.listarTodos();
+    res.json(usuario);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -64,4 +64,4 @@ async function deletarUsuario(req, res) {
 }
 
 // Exporta as funções do controlador.
-export default { listarTodos, buscarUsuarioPorId, cadastraUsuario, atualizarUsuario, deletarUsuario };
+module.exports  = { listarTodos, buscarUsuarioPorId, cadastraUsuario, atualizarUsuario, deletarUsuario };

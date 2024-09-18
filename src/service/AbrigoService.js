@@ -1,4 +1,4 @@
-import AbrigoRepository from "../repositores/AbrigoRepository";
+const AbrigoRepository = require("../repositores/AbrigoRepository");
 
 export default class AbrigoService {
   static async listarTodosAbrigos() {

@@ -1,6 +1,6 @@
-import AdocaoService from "../repositores/AdocaoRepository";
+const AdocaoService = require("../repositores/AdocaoRepository");
 
-export default class AdocaoService {
+class AdocaoService {
     static async listarTodasAdocoes() {
         return await AdocaoService.findAll();
       }
@@ -17,3 +17,4 @@ export default class AdocaoService {
         return await AdocaoService.destroy(id);
       }
 }
+module.exports = AdocaoService;

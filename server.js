@@ -1,9 +1,11 @@
 // Importa o módulo Express.
-import express from "express";
+const express = require('express');
+
 // Importa a configuração do banco de dados.
-import db from "./src/db/db.js";
+const db = require('./src/config/db.js');
+
 // Importa as rotas de usuários.
-import usuarioRoutes from "./src/routes/UsuarioRoute.js";
+const usuarioRoutes = require('./src/routes/UsuarioRoute.js');
 
 // Cria uma instância do Express.
 const app = express();
@@ -18,4 +20,5 @@ db.sync(() => console.log(`Banco de dados conectado: ${process.env.DB_NAME}`));
 app.use("/api", usuarioRoutes);
 
 // Inicia o servidor na porta 3000 e exibe uma mensagem no console.
-app.listen(3000, () => console.log("Servidor iniciado na porta 3000"));
+app.listen(3001, () => console.log("Servidor iniciado na porta 3001"));
+
