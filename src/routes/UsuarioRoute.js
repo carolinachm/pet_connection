@@ -7,11 +7,11 @@ import usuarioController from "../controllers/UsuarioController.js";
 const router = express.Router();
 
 // Define as rotas e os métodos HTTP associados.
-router.get("/usuario", usuarioController.listarTodos);
-router.get("/usuario/:id", usuarioController.buscarUsuarioPorId);
-router.post("/usuario", usuarioController.cadastraUsuario);
-router.put("/usuario/:id", usuarioController.atualizarUsuario);
-router.delete("/usuario/:id", usuarioController.deletarUsuario);
+router.get("/", usuarioController.listarTodos);
+router.get("/:id", usuarioController.buscarUsuarioPorId);
+router.post("/", usuarioController.cadastraUsuario);
+router.put("/:id", usuarioController.atualizarUsuario);
+router.delete("/:id", usuarioController.deletarUsuario);
 
 // Exporta o roteador configurado como padrão.
 export default router;
