@@ -1,5 +1,6 @@
 // Importa a classe Sequelize do módulo sequelize.
 import { Sequelize } from "sequelize";
+import bcrypt from 'bcrypt';
 // Importa a configuração do banco de dados.
 import db from "../db/db.js";
 
@@ -35,6 +36,7 @@ const Usuario = db.define("usuario", {
   endereco: {
     type: Sequelize.STRING,
     allowNull: false,
+    defaultValue: 'user'
   },
   // Define o campo 'telefone' como string, não nulo e único.
   telefone: {
@@ -46,6 +48,7 @@ const Usuario = db.define("usuario", {
   tipo: {
     type: Sequelize.STRING,
     allowNull: false,
+    defaultValue: 'user'
   },
   // Define o campo 'foto' para armazenar informações de foto (pode ser string ou URL).
   foto: {
@@ -57,6 +60,21 @@ const Usuario = db.define("usuario", {
     type: Sequelize.DATE,
     allowNull: false,
     defaultValue: Sequelize.NOW,
+  },
+}, {
+  hooks: {
+    beforeCreate: async (usuario) => {
+      if (usuario.senha) {
+        const salt = await bcrypt.genSalt(10);
+        usuario.senha = await bcrypt.hash(usuario.senha, salt);
+      }
+    },
+    beforeUpdate: async (usuario) => {
+      if (usuario.changed('senha')) {
+        const salt = await bcrypt.genSalt(10);
+        usuario.senha = await bcrypt.hash(usuario.senha, salt);
+      }
+    },
   },
 });
 
