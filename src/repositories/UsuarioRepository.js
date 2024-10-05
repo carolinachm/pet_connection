@@ -1,5 +1,5 @@
 // Importa o modelo de Usuario.
-import Usuario from "../models/usuarioModel.js";
+import Usuario from "../models/UsuarioModel.js";
 
 // Define e exporta a classe UsuarioRepository.
 export default class UsuarioRepository {
