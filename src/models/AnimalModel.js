@@ -6,7 +6,7 @@ const Animal = db.define("animal", {
   id: {
     type: Sequelize.INTEGER,
     validate: {
-        min: 0 // Garante que o valor seja sempre maior ou igual a 0
+      min: 0, // Garante que o valor seja sempre maior ou igual a 0
     },
     primaryKey: true,
     autoIncrement: true,
@@ -57,20 +57,6 @@ const Animal = db.define("animal", {
     type: Sequelize.STRING,
     allowNull: true,
   },
-  id_abrigo: {
-    type: Sequelize.INTEGER,
-    allowNull: true, 
-    references: {
-      model: Abrigo,
-      key: "id", 
-    },
-  },
-});
-
-// Definindo a relação entre Animal e Abrigo
-Animal.belongsTo(Abrigo, {
-  foreignKey: 'id_abrigo',
-  as: 'abrigo'
 });
 
 export default Animal;

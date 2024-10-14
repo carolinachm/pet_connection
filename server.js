@@ -23,4 +23,4 @@ app.use("/api/usuario", usuarioRoutes);
 app.use("/api/animal", animalRoutes);
 
 // Inicia o servidor na porta 3000 e exibe uma mensagem no console.
-app.listen(3000, () => console.log("Servidor iniciado na porta 3000"));
+app.listen(3002, () => console.log("Servidor iniciado na porta 3002"));
