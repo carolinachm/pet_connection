@@ -17,6 +17,7 @@ app.use(express.json());
 // Sincroniza o banco de dados e exibe uma mensagem no console.
 db.sync(() => console.log(`Banco de dados conectado: ${process.env.DB_NAME}`));
 app.use(cors());
+app.use("/uploads", express.static("uploads"));
 
 // Define as rotas
 app.use("/api/usuario", usuarioRoutes);

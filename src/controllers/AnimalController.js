@@ -43,7 +43,7 @@ async function cadastraAnimal(req, res) {
         .json({ message: "Nome e espécie são obrigatórios." });
     }
 
-    const foto = req.file ? req.file.filename : null;
+    const foto = req.file ? `/uploads/${req.file.filename}` : null; // Corrigido para não duplicar /uploads
 
     const animalData = {
       nome,
@@ -56,12 +56,10 @@ async function cadastraAnimal(req, res) {
       caracteristicas,
       status,
       data_entrada,
-      foto: foto ? `/uploads/${foto}` : null,
+      foto, // Salva o caminho da foto corretamente
     };
 
-    const animal = await AnimalService.cadastraAnimal(
-      animalData
-    );
+    const animal = await AnimalService.cadastraAnimal(animalData);
     res.status(201).json(animal);
   } catch (error) {
     res.status(500).json({ message: error.message });

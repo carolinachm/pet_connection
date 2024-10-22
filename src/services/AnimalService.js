@@ -14,7 +14,7 @@ export default class AnimalService {
 
   // Método para cadastrar um novo animal.
   static async cadastraAnimal(data) {
-    if (data.foto) {
+    if (data.foto && !data.foto.startsWith('/uploads/')) {
       data.foto = `/uploads/${data.foto}`;
     }
     return await AnimalRepository.create(data);
@@ -22,10 +22,10 @@ export default class AnimalService {
 
   // Método para atualizar um animal pelo ID.
   static async atualizarAnimal(id, data) {
-    if (data.foto) {
+    if (data.foto && !data.foto.startsWith('/uploads/')) {
       data.foto = `/uploads/${data.foto}`;
     }
-    return await AnimalRepository.update(data, id);
+    return await AnimalRepository.update(data, { where: { id } });
   }
 
   // Método para deletar um animal pelo ID.
