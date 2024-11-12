@@ -1,0 +1,37 @@
+### Definição do baseUrl
+@baseUrl = http://localhost:3001
+
+### Requisição GET para listar todos os usuários
+GET {{baseUrl}}/usuarios
+Accept: application/json
+
+### Requisição GET para buscar um usuário pelo ID
+GET {{baseUrl}}/usuarios/1
+Accept: application/json
+
+### Requisição POST para criar um novo usuário
+POST {{baseUrl}}/usuarios
+Content-Type: application/jsont
+Accept: application/json
+
+{
+  "nome": "Marinha da Silva",
+  "email": "marinha@exemplo.com",
+  "telefone": "123456781",
+  "endereco": "teste2"
+}
+
+### Requisição PUT para atualizar um usuário
+PUT {{baseUrl}}/usuarios/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nome": "João Silva Atualizado",
+  "email": "joao@exemplo.com",
+  "telefone": "987654321"
+}
+
+### Requisição DELETE para excluir um usuário
+DELETE {{baseUrl}}/usuarios/6
+Accept: application/json
