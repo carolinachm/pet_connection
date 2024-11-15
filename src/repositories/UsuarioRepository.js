@@ -1,8 +1,9 @@
+// src/repositories/UsuarioRepository.js
 const Usuario = require('../models/Usuario');
 
 class UsuarioRepository {
     async criarUsuario(data) {
-        return await Usuario.create(data);
+        return await Usuario.create(data);  // Inclui o caminho da foto no objeto `data`
     }
 
     async buscarTodosUsuarios() {

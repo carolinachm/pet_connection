@@ -13,7 +13,7 @@ class AbrigoController {
     async buscarTodosAbrigos(req, res) {
         try {
             const abrigos = await AbrigoService.buscarTodosAbrigos();
-            res.json(abrigos);
+            res.status(200).json(abrigos);
         } catch (error) {
             res.status(500).json({ error: 'Erro ao listar abrigos' });
         }
@@ -22,7 +22,7 @@ class AbrigoController {
     async buscarAbrigoPorId(req, res) {
         try {
             const abrigo = await AbrigoService.buscarAbrigoPorId(req.params.id);
-            if (abrigo) res.json(abrigo);
+            if (abrigo) res.status(200).json(abrigo);
             else res.status(404).json({ error: 'Abrigo não encontrado' });
         } catch (error) {
             res.status(500).json({ error: 'Erro ao buscar abrigo' });
@@ -32,7 +32,7 @@ class AbrigoController {
     async atualizarAbrigo(req, res) {
         try {
             const abrigo = await AbrigoService.atualizarAbrigo(req.params.id, req.body);
-            if (abrigo) res.json(abrigo);
+            if (abrigo) res.status(200).json(abrigo);
             else res.status(404).json({ error: 'Abrigo não encontrado' });
         } catch (error) {
             res.status(500).json({ error: 'Erro ao atualizar abrigo' });
@@ -42,7 +42,7 @@ class AbrigoController {
     async excluirAbrigo(req, res) {
         try {
             const success = await AbrigoService.excluirAbrigo(req.params.id);
-            if (success) res.json({ message: 'Abrigo deletado' });
+            if (success) res.status(204).json({ message: 'Abrigo deletado' });
             else res.status(404).json({ error: 'Abrigo não encontrado' });
         } catch (error) {
             res.status(500).json({ error: 'Erro ao deletar abrigo' });

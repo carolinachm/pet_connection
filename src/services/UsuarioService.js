@@ -1,25 +1,60 @@
-const usuarioRepository = require('../repositories/UsuarioRepository');
+// src/services/UsuarioService.js
+
+const UsuarioRepository = require('../repositories/UsuarioRepository');
 
 class UsuarioService {
-    async criarUsuario(data) {
-        return await usuarioRepository.criarUsuario(data);
+  // Criar usuário
+  async criarUsuario(data) {
+    try {
+      return await UsuarioRepository.criarUsuario(data); // Chama o repositório para criar o usuário
+    } catch (error) {
+      throw new Error('Erro ao criar usuário');
     }
+  }
 
-    async buscarTodosUsuarios() {
-        return await usuarioRepository.buscarTodosUsuarios();
+  // Buscar todos os usuários
+  async buscarTodosUsuarios() {
+    try {
+      return await UsuarioRepository.buscarTodosUsuarios();
+    } catch (error) {
+      throw new Error("Erro ao listar usuários");
+      
     }
+    
+  }
 
-    async buscarUsuarioPorId(id) {
-        return await usuarioRepository.buscarUsuarioPorId(id);
-    }
+  // Buscar usuário por ID
+  async buscarUsuarioPorId(id) {
+    try {
+      return await UsuarioRepository.buscarUsuarioPorId(id);
 
-    async atualizarUsuario(id, data) {
-        return await usuarioRepository.atualizarUsuario(id, data);
+    } catch (error) {
+      throw new Error("Erro ao buscar um usuário");
+      
     }
+  }
 
-    async excluirUsuario(id) {
-        return await usuarioRepository.excluirUsuario(id);
+  // Atualizar usuário
+  async atualizarUsuario(id, data) {
+    try {
+      return await UsuarioRepository.atualizarUsuario(id, data);
+
+    } catch (error) {
+      throw new Error("Erro ao atualizar usuário");
+      
     }
+  }
+
+  // Excluir usuário
+  async excluirUsuario(id) {
+    try {
+      return await UsuarioRepository.excluirUsuario(id);
+
+    } catch (error) {
+      throw new Error("Erro ao excluir usuário");
+      
+    }
+  }
 }
 
 module.exports = new UsuarioService();
