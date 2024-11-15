@@ -1,21 +1,21 @@
 const express = require('express');
-const abrigoController = require('../controllers/AbrigoController');
+const AbrigoController = require('../controllers/AbrigoController');
 
 const router = express.Router();
 
 // Rota para criar um abrigo com upload de foto
-router.post('/abrigos',  abrigoController.criarAbrigo);
+router.post('/abrigos',  AbrigoController.criarAbrigo);
 
 // Rota para listar todos os abrigos
-router.get('/abrigos', abrigoController.buscarTodosAbrigos);
+router.get('/abrigos', AbrigoController.buscarTodosAbrigos);
 
 // Rota para buscar um abrigos por ID
-router.get('/abrigos/:id', abrigoController.buscarAbrigoPorId);
+router.get('/abrigos/:id', AbrigoController.buscarAbrigoPorId);
 
 // Rota para atualizar um abrigos por ID
-router.put('/abrigos/:id', abrigoController.atualizarAbrigo);
+router.put('/abrigos/:id', AbrigoController.atualizarAbrigo);
 
 // Rota para excluir um abrigos por ID
-router.delete('/abrigos/:id', abrigoController.excluirAbrigo);
+router.delete('/abrigos/:id', AbrigoController.excluirAbrigo);
 
 module.exports = router;

@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const Usuario = require('../models/Usuario'); // Importe o modelo Usuario se ele já estiver criado
+const Usuario = require('./Usuario'); // Importando o modelo Usuario
 
 const Abrigo = sequelize.define('Abrigo', {
     nome: {
@@ -28,18 +28,21 @@ const Abrigo = sequelize.define('Abrigo', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Usuarios', // Nome da tabela relacionada no banco de dados
+            model: 'usuarios', // Referência à tabela 'usuarios'
             key: 'id',
-            onUpdate: 'CASCADE', // Definindo a ação para atualização da chave estrangeira
-            onDelete: 'CASCADE', // Definindo a ação para exclusão da chave estrangeira
+            onUpdate: 'CASCADE',
+            onDelete: 'CASCADE',
         }
     },
+}, {
+    tableName: 'abrigos',  // Especifica o nome da tabela como 'abrigos'
+    timestamps: true,       // Garante que as colunas 'createdAt' e 'updatedAt' sejam gerenciadas automaticamente
 });
 
 // Relacionamento: um Abrigo pertence a um Usuario
 Abrigo.belongsTo(Usuario, {
-    foreignKey: 'id_usuario', // Chave estrangeira no modelo Abrigo
-    as: 'usuario',            // Nome do alias do relacionamento
+    foreignKey: 'id_usuario',
+    as: 'usuario', // Alias para o relacionamento
 });
 
 module.exports = Abrigo;

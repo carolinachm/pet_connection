@@ -1,5 +1,5 @@
 ### Definição do baseUrl
-@baseUrl = http://localhost:3000
+@baseUrl = http://localhost:3002/api
 
 ### Requisição GET para listar todos os abrigos
 GET {{baseUrl}}/abrigos
@@ -19,7 +19,7 @@ Content-Type: application/json
 "telefone": "123456789",
 "endereco": "Rua da Paz, 123",
 "capacidade": "50",
-"id_usuario": 7
+"id_usuario": 1
 }
 
 ### Requisição PUT para atualizar um abrigo
