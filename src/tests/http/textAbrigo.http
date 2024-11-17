@@ -1,5 +1,17 @@
 ### Definição do baseUrl
-@baseUrl = http://localhost:3002/api
+@baseUrl = http://localhost:3000/api
+
+POST {{baseUrl}}/abrigos
+Content-Type: application/json
+
+{
+  "nome": "Abrigo Esperança",
+  "email": "abrigo@esperanca.com",
+  "telefone": "123456789",
+  "endereco": "Rua da Paz, 123",
+  "capacidade": "50",
+  "id_usuario": 1
+}
 
 ### Requisição GET para listar todos os abrigos
 GET {{baseUrl}}/abrigos
@@ -28,13 +40,13 @@ Content-Type: application/json
 Accept: application/json
 
 {
-"nome": "Abrigo Esperança Atualizado",
-"email": "abrigo@esperanca.com",
-"telefone": "123456789",
-"endereco": "Rua da Paz, 123",
-"capacidade": "75",
-"usuario": 1
-}
+    "nome": "Abrigo  atualizado",
+    "email": "abrigo@esperanca.com",
+    "telefone": "123456789",
+    "endereco": "Rua da Paz, 123",
+    "capacidade": 75,
+    "id_usuario": 2
+  }
 
 ### Requisição DELETE para excluir um abrigo
 DELETE {{baseUrl}}/abrigos/1

@@ -7,7 +7,7 @@ class ApadrinhamentoRepository {
   }
 
   // Buscar todos os animais
-  async buscarTodosApadrinhamento() {
+  async buscarTodosApadrinhamentos() {
     return await Apadrinhamento.findAll();
   }
 
@@ -18,10 +18,10 @@ class ApadrinhamentoRepository {
 
   // Atualizar Apadrinhamento
   async atualizarApadrinhamento(id, data) {
-    const Apadrinhamento = await Apadrinhamento.findByPk(id);
-    if (Apadrinhamento) {
-      return await Apadrinhamento.update(data);
-    }
+    const apadrinhamento = await Apadrinhamento.findByPk(id);
+    if (apadrinhamento) {
+       await Apadrinhamento.update(data, { where: { id } });
+    }return await Apadrinhamento.findByPk(id);
     return null;
   }
 

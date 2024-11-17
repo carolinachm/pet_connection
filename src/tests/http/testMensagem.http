@@ -1,0 +1,37 @@
+###
+@baseUrl = http://localhost:3000/api
+
+###Requisicao Post para criar uma mensagem
+POST {{baseUrl}}/mensagens
+Content-Type: application/json
+Accept: application/json
+
+{
+  "assuntos": "Criando um assinto",
+  "conteudo": "Criando um conteudo",
+  "id_usuario_origem": 2,
+  "id_usuario_destino": 1
+}
+
+###Requisicao Get para listar todas as Mensagens
+GET {{baseUrl}}/mensagens
+Content-Type: application/json
+Accept: application/json
+
+
+###Requisicao Get buscar uma Mensagem pelo ID
+GET {{baseUrl}}/mensagens/1
+Content-Type: application/json
+Accept: application/json
+
+###Requisicao PUT para atualizar uma Mensagem pelo ID
+PUT {{baseUrl}}/mensagens/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "assuntos": "Criando um assunto atualizado",
+  "conteudo": "Criando um conteudo",
+  "id_usuario_origem": 1,
+  "id_usuario_destino": 2
+}

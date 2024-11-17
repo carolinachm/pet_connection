@@ -2,26 +2,18 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const Usuario = require('./Usuario'); // Importando o modelo Usuario
 
-const Abrigo = sequelize.define('Abrigo', {
-    nome: {
-        type: DataTypes.STRING,
+const Doacao = sequelize.define('Doacao', {
+    valor: {
+        type: DataTypes.FLOAT,
         allowNull: false,
     },
-    email: {
-        type: DataTypes.STRING,
+    data: {
+        type: DataTypes.DATE,
         unique: true,
         allowNull: false,
     },
-    telefone: {
+    observacao: {
         type: DataTypes.STRING,
-        allowNull: true,
-    },
-    endereco: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    capacidade: {
-        type: DataTypes.INTEGER,
         allowNull: true,
     },
     id_usuario: {
@@ -35,14 +27,14 @@ const Abrigo = sequelize.define('Abrigo', {
         }
     },
 }, {
-    tableName: 'abrigos',  // Especifica o nome da tabela como 'abrigos'
+    tableName: 'doacaos',  // Especifica o nome da tabela como 'Doacaos'
     timestamps: true,       // Garante que as colunas 'createdAt' e 'updatedAt' sejam gerenciadas automaticamente
 });
 
-// Relacionamento: um Abrigo pertence a um Usuario
-Abrigo.belongsTo(Usuario, {
+// Relacionamento: um Doacao pertence a um Usuario
+Doacao.belongsTo(Usuario, {
     foreignKey: 'id_usuario',
     as: 'usuario', // Alias para o relacionamento
 });
 
-module.exports = Abrigo;
+module.exports = Doacao;

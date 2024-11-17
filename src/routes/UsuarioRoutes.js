@@ -11,7 +11,7 @@ router.post('/usuarios', upload.single('foto'), usuarioController.criarUsuario);
 router.get('/usuarios', usuarioController.buscarTodosUsuarios);
 
 // Rota para buscar um usuário por ID
-router.get('/usuarios/:id', usuarioController.buscarUsuariosPorId);
+router.get('/usuarios/:id', usuarioController.buscarUsuarioPorId);
 
 // Rota para atualizar um usuário por ID
 router.put('/usuarios/:id', usuarioController.atualizarUsuario);

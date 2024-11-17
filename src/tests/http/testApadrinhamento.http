@@ -1,0 +1,43 @@
+### Definição do baseUrl
+@baseUrl = http://localhost:3000/api
+
+### Requisição POST para criar um novo apadrinhamento
+POST {{baseUrl}}/apadrinhamentos
+Content-Type: application/json
+
+{
+  "valor_mensal": 3000,
+  "data_inicio": "2024-11-17",
+  "data_fim": "2024-11-30",
+  "id_usuario": 1,
+  "id_animal": 2
+
+}
+
+### Requisição GET para listar todos os abrigos
+GET {{baseUrl}}/apadrinhamentos
+Accept: application/json
+
+### Requisição GET para buscar um abrigos pelo ID
+GET {{baseUrl}}/apadrinhamentos/1
+Accept: application/json
+
+
+
+### Requisição PUT para atualizar um abrigo
+PUT {{baseUrl}}/apadrinhamentos/6
+Content-Type: application/json
+Accept: application/json
+
+{
+
+  "valor_mensal": 1000,
+  "data_inicio": "2024-12-01",
+  "data_fim": "2024-12-02",
+  "id_usuario": 1,
+  "id_animal": 3
+}
+
+### Requisição DELETE para excluir um abrigo
+DELETE {{baseUrl}}/apadrinhamentos/1
+Accept: application/json

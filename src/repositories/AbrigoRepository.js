@@ -15,13 +15,15 @@ class AbrigoRepository{
 
     async atualizarAbrigo(id, data) {
         const abrigo = await Abrigo.findByPk(id);
-        if (abrigo) return await abrigo.update(data);
+        if (abrigo) {
+            await Abrigo.update(data, {where: {id}})
+        } return await Abrigo.findByPk(id);
         return null;
     }
 
     async excluirAbrigo(id) {
         const abrigo = await Abrigo.findByPk(id);
-        if (abrigo) return await abrigo.destroy();
+        if (abrigo) return await Abrigo.destroy();
         return null;
     }
 }

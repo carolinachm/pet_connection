@@ -7,8 +7,8 @@ Content-Type: application/jsont
 Accept: application/json
 
 {
-  "nome": "ze5 Silva",
-  "email": "ze5@exemplo.com",
+  "nome": "ze6 Silva",
+  "email": "ze6@exemplo.com",
   "telefone": "123456781",
   "endereco": "teste2",
   "foto":""
@@ -23,16 +23,16 @@ GET {{baseUrl}}/usuarios/3
 Accept: application/json
 
 ### Requisição PUT para atualizar um usuário
-PUT {{baseUrl}}/usuarios/3
+PUT {{baseUrl}}/usuarios/2
 Content-Type: application/json
 Accept: application/json
 
 {
-  "nome": "João Silva Atualizado",
+  "nome": "João Silva Atualizado outra vez 2",
   "email": "joao@exemplo.com",
   "telefone": "987654321"
 }
 
 ### Requisição DELETE para excluir um usuário
-DELETE {{baseUrl}}/usuarios/3
+DELETE {{baseUrl}}/usuarios/1
 Accept: application/json
