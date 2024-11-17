@@ -20,8 +20,8 @@ class AnimalRepository {
   async atualizarAnimal(id, data) {
     const animal = await Animal.findByPk(id);
     if (animal) {
-      return await animal.update(data);
-    }
+      await Animal.update(data, {where:{ id}});
+    } return await Animal.findByPk(id);
     return null;
   }
 

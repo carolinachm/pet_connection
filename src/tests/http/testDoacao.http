@@ -1,0 +1,42 @@
+###Definição do baseUrl
+@baseUrl = http://localhost:3000/api
+
+###Requisição post para criar uma doação
+POST {{baseUrl}}/doacoes
+Content-Type: application/json
+Accept: application/json
+
+{
+  "valor": 3.000,
+  "data": "2024-11-14",
+  "observacao": "isso é teste de criação de doação",
+  "id_usuario": 2
+}
+
+###Requisição para buscar todas as doaçoes
+GET {{baseUrl}}/doacoes
+Content-Type: application/json
+Accept: application/json
+
+###Requisição para buscar uma doação por ID
+GET {{baseUrl}}/doacoes/1
+Content-Type: application/json
+Accept: application/json
+
+###Requisição para atualizar uma doação por ID
+PUT {{baseUrl}}/doacoes/1
+Content-Type: application/json
+Accept: application/json
+
+{
+
+  "valor": 1,
+  "data": "2024-11-16T00:00:00.000Z",
+  "observacao": "isso é teste de atualização de uma doação",
+  "id_usuario": 1
+}
+
+###Requisição para excluir uma doação
+DELETE {{baseUrl}}/doacoes/1
+Content-Type: application/json
+Accept: application/json

@@ -1,0 +1,35 @@
+### Definição do baseUrl
+@baseUrl = http://localhost:3000/api
+
+### Requisição POST para criar um novo evento
+POST {{baseUrl}}/eventos
+Content-Type: application/json
+
+{
+  "nome": "evento do evendo",
+  "data": "2024-11-20",
+  "local": "evento teste",
+  "descricao": "teste do teste do evento"
+}
+
+### Requisição GET para listar todos os eventos
+GET {{baseUrl}}/eventos
+Accept: application/json
+
+### Requisição GET para buscar um eventos pelo ID
+GET {{baseUrl}}/eventos/3
+Accept: application/json
+
+### Requisição PUT para realizar a atualização evento pelo ID
+PUT {{baseUrl}}/eventos/3
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nome": "evento do evendo atualizado",
+  "data": "2024-11-20",
+  "local": "terra do nunca",
+  "descricao": "teste do teste do evento"
+}
+###Requisição para excluir um evento por ID
+DELETE {{baseUrl}}/eventos/1

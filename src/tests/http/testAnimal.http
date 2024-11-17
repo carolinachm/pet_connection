@@ -1,0 +1,40 @@
+###baseUrl
+@baseUrl = http://localhost:3000/api
+
+### Requisição para criar animal
+POST {{baseUrl}}/animais
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nome": "caramelo doido",
+  "especie": "caramelo de rua",
+  "raca": "caramelo vira lata",
+  "idade": 12,
+  "sexo": "macho",
+  "id_abrigo": 1
+}
+
+###Requisição para listar todos os animais
+GET {{baseUrl}}/animais
+Content-Type: application/json
+Accept: application/json
+
+###REquisição para buscar um animal por ID
+GET {{baseUrl}}/animais/1
+Content-Type: application/json
+Accept: application/json
+
+###Requisição para atualizar um animal por ID
+PUT {{baseUrl}}/animais/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nome": "caramelo doido atualizado",
+  "especie": "caramelo de rua atualizado",
+  "raca": "caramelo vira lata atualizado",
+  "idade": 5,
+  "sexo": "femia",
+  "id_abrigo": 1
+}
