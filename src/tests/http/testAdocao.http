@@ -1,0 +1,19 @@
+###baseUrl
+@baseUrl = http://localhost:3000/api 
+
+### Requisicao para criar adocao
+POST {{baseUrl}}/adocoes
+Content-Type: application/json
+Accept: application/json
+
+{
+    "data_adocao": "2024-11-30",
+    "status_adocao": true,
+    "id_usuario": 1,
+    "id_animal": 2
+}
+
+### Requisição para buscar todas as adoções
+GET {{baseUrl}}/adocoes
+Content-Type: application/json
+Accept: application/json

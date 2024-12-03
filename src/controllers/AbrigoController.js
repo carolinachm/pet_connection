@@ -6,7 +6,7 @@ class AbrigoController {
             const abrigo = await AbrigoService.criarAbrigo(req.body);
             res.status(201).json(abrigo);
         } catch (error) {
-            res.status(500).json({ error: 'Erro ao criar abrigo' });
+            res.status(500).json({ error: 'Erro ao criar um abrigo' });
         }
     }
 
@@ -23,7 +23,7 @@ class AbrigoController {
         try {
             const abrigo = await AbrigoService.buscarAbrigoPorId(req.params.id);
             if (abrigo) res.status(200).json(abrigo);
-            else res.status(404).json({ error: 'Abrigo não encontrado' });
+            else res.status(404).json({ error: 'Abrigo não foi encontrado' });
         } catch (error) {
             res.status(500).json({ error: 'Erro ao buscar abrigo' });
         }

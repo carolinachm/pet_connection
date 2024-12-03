@@ -14,6 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 
 const usuarioRoutes = require('./src/routes/UsuarioRoutes');
 const abrigoRoutes = require('./src/routes/AbrigoRoutes');
+const adocaoRoutes = require('./src/routes/AdocaoRoutes');
+const avaliacaoRoutes = require('./src/routes/AvaliacaoRoutes');
 const animalRoutes = require('./src/routes/AnimalRoutes');
 const apadrinhamentoRoutes = require("./src/routes/ApadrinhamentoRoutes");
 const eventoRoutes = require("./src/routes/EventoRoutes");
@@ -22,6 +24,8 @@ const mensagemRoutes = require("./src/routes/MensagemRoutes");
 
 app.use('/api', usuarioRoutes);
 app.use('/api', abrigoRoutes);
+app.use('/api', adocaoRoutes);
+app.use('/api', avaliacaoRoutes);
 app.use('/api', animalRoutes);
 app.use('/api', apadrinhamentoRoutes);
 app.use('/api', eventoRoutes);

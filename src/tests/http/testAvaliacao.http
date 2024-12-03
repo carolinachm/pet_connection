@@ -1,0 +1,35 @@
+###baseUrl
+@baseUrl = http://localhost:3000/api
+
+###Requisição para criar uma avaliação
+POST {{baseUrl}}/avaliacoes
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nota": "teste nota",
+    "comentario": "teste comentario",
+    "id_adocao": 2
+}
+
+###Requisição para buscar todas as avaliações
+GET {{baseUrl}}/avaliacoes
+Content-Type: application/json
+Accept: application/json
+
+###Requisição para buscar uma avaliação
+GET {{baseUrl}}/avaliacoes/1
+Content-Type: application/json
+Accept: application/json
+
+###Requisicao para atualizar uma avaliação
+PUT {{baseUrl}}/avaliacoes/1
+Content-Type: application/json
+Accept: application/json
+
+ {
+    "id": 1,
+    "nota": "teste nota atualizada",
+    "comentario": "teste comentario atualizado",
+    "id_adocao": 2
+  }
